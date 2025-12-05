@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+tools {
+        maven 'Maven3'  // Use the name you configured
+        jdk 'Java21'    // Make sure Java 21 is configured in Jenkins as well
+    }
     environment {
         IMAGE_REPO = "rferns/maven-app"
         IMAGE_TAG  = "${env.BUILD_NUMBER}"
