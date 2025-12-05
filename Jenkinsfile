@@ -24,6 +24,7 @@ tools {
         stage('Build Maven App') {
             steps {
                 sh """
+                    export PATH=/opt/maven/bin:$PATH
                     mvn clean package -DskipTests
                 """
             }
