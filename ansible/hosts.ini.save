@@ -1,0 +1,2 @@
+[target]
+13.212.12.132 ansible_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/project/tf/terraform-archana-keypair.pem
