@@ -17,7 +17,7 @@ tools {
 
         stage('Checkout Code') {
             steps {
-                git url: 'https://github.com/rferns0008/maven_app.git', branch: 'main'
+                git url: 'https://github.com/archana-thbs/maven-app.git', branch: 'main'
             }
         }
 
