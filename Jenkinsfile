@@ -40,7 +40,7 @@ tools {
 
         stage('Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds',
+                withCredentials([usernamePassword(credentialsId: 'docker-creds',
                     usernameVariable: 'DC_USER', passwordVariable: 'DC_PASS')]) {
 
                     sh """
