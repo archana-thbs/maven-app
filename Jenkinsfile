@@ -5,7 +5,7 @@ tools {
         jdk 'Java21'    // Make sure Java 21 is configured in Jenkins as well
     }
     environment {
-        IMAGE_REPO = "rferns/maven-app"
+        IMAGE_REPO = "archanaranjan25/maven-app"
         IMAGE_TAG  = "${env.BUILD_NUMBER}"
         FULL_IMAGE = "${IMAGE_REPO}:${IMAGE_TAG}"
 
