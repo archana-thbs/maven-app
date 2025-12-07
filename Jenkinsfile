@@ -15,6 +15,12 @@ tools {
 
     stages {
 
+        stage('Clean Workspace') {
+    steps {
+        deleteDir()
+    }
+}
+
         stage('Checkout Code') {
             steps {
                 git url: 'https://github.com/archana-thbs/maven-app.git', branch: 'main'
@@ -53,8 +59,10 @@ tools {
         }
 
         stage('Debug Hosts File') {
-    steps {
+   steps {
+        sh "echo '===== DEBUG HOSTS.INI ====='"
         sh "cat ./ansible/hosts.ini"
+        sh "echo '============================'"
     }
 }
 
