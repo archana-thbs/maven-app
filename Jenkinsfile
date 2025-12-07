@@ -52,6 +52,12 @@ tools {
             }
         }
 
+        stage('Debug Hosts File') {
+    steps {
+        sh "cat ./ansible/hosts.ini"
+    }
+}
+
         stage('Deploy App to EC2 via Ansible') {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'ansible-ssh-key',
