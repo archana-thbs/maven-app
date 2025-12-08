@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.9' // Name configured in Jenkins Global Tool Configuration
+    }
+
     environment {
         IMAGE_REPO = "rferns/maven-app"
         IMAGE_TAG  = "${env.BUILD_NUMBER}"
@@ -20,17 +24,13 @@ pipeline {
 
         stage('Build Maven App') {
             steps {
-                sh """
-                    mvn clean package -DskipTests
-                """
+                sh "mvn clean package -DskipTests"
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh """
-                    docker build -t ${FULL_IMAGE} .
-                """
+                sh "docker build -t ${FULL_IMAGE} ."
             }
         }
 
